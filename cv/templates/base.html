@@ -1,0 +1,75 @@
+<!Doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    {% block Title %}<title>Home</title>{% endblock Title %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+ </head>
+  <body>
+  {% include 'navbar.html' %}
+    <div class="container-fluid">
+        
+            {% block content %}
+            
+            
+            {% endblock content %}
+
+
+
+
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/popper.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+
+  <footer class="footer mt-5">
+      <div class="footer-left col-md-4 col-sm-6">
+        <p class="about">
+          <span> About the company</span> Ut congue augue non tellus bibendum, in varius tellus condimentum. In scelerisque nibh tortor, sed rhoncus odio condimentum in. Sed sed est ut sapien ultrices eleifend. Integer tellus est, vehicula eu lectus tincidunt,
+          ultricies feugiat leo. Suspendisse tellus elit, pharetra in hendrerit ut, aliquam quis augue. Nam ut nibh mollis, tristique ante sed, viverra massa.
+        </p>
+        <div class="icons">
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-linkedin"></i></a>
+          <a href="#"><i class="fa fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer-center col-md-4 col-sm-6">
+        <div>
+          <i class="fa fa-map-marker"></i>
+          <p><span> Street Name and number</span> Ramurthy Nagar,Bengaluru</p>
+        </div>
+        <div>
+          <i class="fa fa-phone"></i>
+          <p> (+91)9986730364</p>
+        </div>
+        <div>
+          <i class="fa fa-envelope"></i>
+          <p><a href="#"> muklare@company.com</a></p>
+        </div>
+      </div>
+      <div class="footer-right col-md-4 col-sm-6">
+        <h2> Company  <span>Narcos</span></h2>
+        <p class="menu">
+          <a href="/">Home</a> |
+          <a href="{% url 'about' %}"> About</a> |
+          <a href="{% url 'login' %}"> Login</a> |
+          <a href="{% url 'signup' %}"> Signup</a> |
+          <a href="{% url 'selectresume' %}"> Resume Format</a>
+        </p>
+        <p class="name"> Company Narcos &copy; 2015</p>
+      </div>
+</footer>
+
+  </body>
+</html>

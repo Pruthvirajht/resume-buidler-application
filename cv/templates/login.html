@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block Title %}<title>Login</title>{% endblock Title %}
+{% block content %}
+{% if msg %}
+        <h1 class="text-danger text-dark text-center">{{msg}}</h1>
+    {% endif %}
+    <div class="container w-50 text-light mt-5" style="min-height:550px;min-width:600px" >
+        <form method="post">
+            <h1 class="text-center m-5 text-warning text-dark">Login Form</h1>
+            {% csrf_token %}
+            <div class="form-group text-dark">
+                {{form|crispy}}
+            </div>
+        <button type="submit"  class="btn btn-lg btn-dark mx-auto btn-block"  style="width:200px" >Login</button>
+        </form>
+    </div>
+{% endblock %}

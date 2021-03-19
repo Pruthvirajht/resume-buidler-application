@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}" >
+    <title>Resume</title>
+</head>
+<body>
+    <div class="container ">
+        <div class="row card-content">
+            <div class="col s4 #b2ebf2 cyan lighten-4">
+                {% for i in pf %}
+                <img src="{{i.image.url}}" class="circle responsive-img center image"  />
+                <div class="container">
+                    <h4 class="grey center">Contact</h4>
+                    <ul>
+                        <li>Name:  {{i.name}} </li>
+                        <li>Phone: {{i.phno}}</li>
+                        <li>Email: {{i.email}}</li>
+                        <li>Git Hub: {{i.github}}</li>
+                        <li>Linked in: {{i.linkdin}}</li>
+                        <li>{{i.city}}, {{i.state}}</li>
+                    </ul>
+                    {% endfor %}
+                    <h4 class="grey center">Education</h4>
+                    {% for i in ed %}
+                    <ul>
+                        <li>{{i.sslc}}</li>
+                        <li>{{i.puc}}</li>
+                        <li>{{i.degree}}</li>
+                        <li>{{i.percentage}}</li>
+                        <ul>{{i.city}}</ul>
+                        <ul>{{i.state}}</ul>
+                    </ul>
+                    {% endfor %}
+                    <h4 class="grey center">Skills</h4>
+                    {% for i in sk %}
+                    <ul>
+                        <li>{{i.skill}}</li>
+                    </ul>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!--right side of the resume-->
+            <div class="col s8">
+                <div class="col s12 ">
+                    <div class="card grey darken-1">
+                      <div class="card-content white-text">
+                          {% for i in pf %}
+                        <span class="card-title center NameDisplay"><h1>{{i.name}}</h1></span>
+                          {% endfor %}
+                        <h5 class="center NameDisplay">Full Stack Developer</h5>
+                      </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-left: 20px;">
+                    <h3 class="NameDisplay">Profile</h3>
+                    <p>{{pf.about}}
+                    </p>
+                    <div class="divider"></div>
+                        <h3 class="NameDisplay">Professional experience</h3>
+                    {% for i in ex %}
+                    <h6 class="NameDisplay">{{i.jobrole}}</h6>
+                    <h6>{{i.companyname}}  |   {{i.city}}   |     {{i.state}}</h6>
+                    <h5>{{i.projects}}</h5>
+                    <div></div>
+                    {% endfor %}
+                </div>
+            </div>
+          </div>
+    </div>
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+</body>
+</html>

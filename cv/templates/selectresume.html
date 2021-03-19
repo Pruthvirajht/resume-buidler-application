@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block Title %}<title>Select Resume</title>{% endblock Title %}
+{% block content %}
+
+<div class="container">
+    <div class="row m-5 ">
+       
+            <div class="card mx-auto w-50">
+                <img class="card-img-top" src="{% static 'images/resume_type_2.png' %}" style="height:500px;width:450px" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Popular Resume</h5>
+                    <p class="card-text">It's the most commonly used resume templates most of the people prefer this because of simplicity and good looks.
+                    and the score of the resume is 83% </p>
+                    <a href="{% url 'restemp'%}" class="btn btn-primary">Use this Resume</a>
+                </div>
+            </div>
+           </div>
+</div>
+
+{% endblock content %}
